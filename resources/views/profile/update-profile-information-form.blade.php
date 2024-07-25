@@ -81,6 +81,12 @@
                 @endif
             @endif
         </div>
+                <!-- Time zone -->
+                <div class="col-span-6 sm:col-span-4">
+                    <x-label for="timezone" value="{{ __('Time Zone') }}" />
+                    <x-input id="name" type="text" class="mt-1 block w-full" wire:model="state.timezone" required autocomplete="name" />
+                    <x-input-error for="timezone" class="mt-2" />
+                </div>
     </x-slot>
 
     <x-slot name="actions">
