@@ -20,6 +20,10 @@
             </div>
 
             <div class="mt-4">
+                <x-label for="username" value="{{ __('Timezone') }}" />
+                <x-select-input id="timezone" class="block mt-1 w-full" name="timezone" :options="$timezones" :selected="old('timezone')" required />
+            </div>
+            <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>

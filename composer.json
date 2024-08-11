@@ -6,12 +6,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "filament/filament": "^3.2",
         "geoip2/geoip2": "^3.0",
         "laravel/framework": "^11.9",
         "laravel/jetstream": "^5.1",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
+        "soap/laravel-timezones-list": "^0.0",
         "torann/geoip": "^3.0",
         "whitecube/laravel-timezones": "^1.2"
     },
@@ -25,10 +27,10 @@
         "pestphp/pest-plugin-laravel": "^2.0"
     },
     "repositories": [
-            {
-                "type": "vcs",
-                "url": "https://github.com/laravel-shift/laravel-timezone.git"
-            }
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravel-shift/laravel-timezone.git"
+        }
     ],
     "autoload": {
         "psr-4": {
@@ -45,7 +47,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

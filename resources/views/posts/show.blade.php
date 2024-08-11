@@ -9,7 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
                 <div>
-
                     <div class="p-6">
                         <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 leading-tight">
                             {{ $post->title }}</h2>
@@ -24,6 +23,14 @@
                             <div><strong>User Timezone</strong> : {{ auth()->user()?->timezone }}</div>
                         </div>
                     </div>
+                    <div class="p-6 bg-slate-100 rounded-3xl">
+                        <a role="button" href="{{ route('posts.index') }}"
+                            class="text-indigo-600 hover:text-indigo-900">Back</a>
+                        <form action="{{ route('posts.destroy', $post) }}" method="POST" class="inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
+                        </form> 
                 </div>
             </div>
         </div>
